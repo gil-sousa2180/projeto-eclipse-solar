@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+}
+
+* {
+    animation: 15s linear infinite;
+}
+
+.ceu {
+    width: 100vw;
+    height: 100vh;
+    background-color: #87CEEB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: animarCeu;
+    position: relative;
+    overflow: hidden;
+}
+
+.sol,
+.lua {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    border-radius: 50%;
+}
+
+.sol {
+    background-color: #FFD700;
+    box-shadow:
+        0 0 20px #FFFF00,
+        inset 5px 5px 10px rgba(255, 165, 0, 0.5),
+        inset -5px -5px 10px rgba(255, 69, 0, 0.5);
+    z-index: 1;
+    animation-name: animarSol;
+}
+
+.lua {
+    background: radial-gradient(
+        circle at center, lightgrey, darkslategray);
+    box-shadow: 
+    inset 10px -10px 15px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.5),
+    inset 20px 20px 30px rgba(0, 0, 0, 0.4),
+    inset -10px 10px 15px rgba(255, 255, 255, 0.3),
+    inset 30px -30px 40px rgba(255, 255, 255, 0.2);
+    animation-name: animarLua;
+    z-index: 2;
+}
+
+@keyframes animarCeu {
+    50% {
+        background-color: black;
+    }
+}
+
+@keyframes animarSol {
+    50% {
+        box-shadow: 0 0 5em 1em #FFFFFF;
+    }
+}
+
+@keyframes animarLua {
+    from {
+        transform: translateX(-100vmin);
+    }
+    50% {
+        background-color: #000000;
+    }
+    to {
+        transform: translate(100vmin);
+    }
+
+}
